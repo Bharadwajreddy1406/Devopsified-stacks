@@ -1,0 +1,36 @@
+services:
+  client:
+    build:
+      context: ./client
+    ports:
+      - 80:80
+    depends_on:
+      - server
+    restart: unless-stopped
+    environment:
+      - API_URL=http://server:5000
+
+  server:
+    build:
+      context: ./server
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: mongodb://mongo:27017/taskmanager
+    ports:
+      - 5000:5000
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:6
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+    # For development purposes only. In production, remove port mapping
+    # and rely on container networking
+    ports:
+      - 27017:27017
+
+volumes:
+  mongo-data:

@@ -170,6 +170,22 @@
   },
   "active": "410d11720a504d46",
   "lastOpenFiles": [
+    "server/node_modules/dotenv/config.d.ts",
+    "server/node_modules/dotenv/README.md",
+    "server/node_modules/dotenv/README-es.md",
+    "server/node_modules/dotenv/CHANGELOG.md",
+    "server/node_modules/dotenv/package.json",
+    "server/node_modules/dotenv/config.js",
+    "server/node_modules/dotenv/lib/main.d.ts",
+    "server/node_modules/dotenv/lib/main.js",
+    "server/node_modules/dotenv/lib/env-options.js",
+    "server/node_modules/dotenv/lib/cli-options.js",
+    "server/node_modules/dotenv/lib",
+    "server/node_modules/dotenv/LICENSE",
+    "server/node_modules/dotenv",
+    "server/node_modules/fsevents",
+    "server/README.md",
+    "README.md",
     "Docker takeaways.md"
   ]
 }
