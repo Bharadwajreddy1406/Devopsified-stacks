@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Docker takeaways.md",
+                "file": "Docker-Notes/Docker_volumes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Docker takeaways"
+              "title": "Docker_volumes"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker takeaways.md",
+                "file": "Docker-Notes/Docker_volumes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Docker takeaways"
+              "title": "Backlinks for Docker_volumes"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Docker takeaways.md",
+                "file": "Docker-Notes/Docker_volumes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Docker takeaways"
+              "title": "Outgoing links from Docker_volumes"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Docker takeaways.md",
+                "file": "Docker-Notes/Docker_volumes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Docker takeaways"
+              "title": "Outline of Docker_volumes"
             }
           }
         ]
@@ -170,6 +170,12 @@
   },
   "active": "410d11720a504d46",
   "lastOpenFiles": [
+    "README.md",
+    "Docker-Notes/for Docker compose.md",
+    "client/node_modules/ms/license.md",
+    "Docker-Notes/Docker_volumes.md",
+    "Docker-Notes",
+    "Docker-Notes/Docker takeaways.md",
     "server/node_modules/dotenv/config.d.ts",
     "server/node_modules/dotenv/README.md",
     "server/node_modules/dotenv/README-es.md",
@@ -182,10 +188,6 @@
     "server/node_modules/dotenv/lib/cli-options.js",
     "server/node_modules/dotenv/lib",
     "server/node_modules/dotenv/LICENSE",
-    "server/node_modules/dotenv",
-    "server/node_modules/fsevents",
-    "server/README.md",
-    "README.md",
-    "Docker takeaways.md"
+    "server/README.md"
   ]
 }
