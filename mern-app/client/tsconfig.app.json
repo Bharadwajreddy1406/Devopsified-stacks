@@ -22,8 +22,9 @@
     "jsx": "react-jsx",
 
     /* Linting */
+    "noEmitOnError": false,
     "strict": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true

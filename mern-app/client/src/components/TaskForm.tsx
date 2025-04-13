@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Task } from '../types/Task'
+import { TaskFormData } from '../types/Task'
 import { createTask, fetchTaskById, updateTask } from '../services/taskService'
 
 const TaskForm = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<TaskFormData>({
     title: '',
     description: '',
     status: 'pending'
