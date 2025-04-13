@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c4cab84bc6e3b4a7",
+        "id": "5b49eb5ec4ca06a2",
         "type": "tabs",
         "children": [
           {
-            "id": "dadf8840067fa34b",
+            "id": "77c0f281b78e3a23",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -168,9 +168,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dadf8840067fa34b",
+  "active": "77c0f281b78e3a23",
   "lastOpenFiles": [
+    "mern-app/client/node_modules/is-number/README.md",
     "mern-app/Docker-Notes/Issues that i got when i'm cookin this.md",
+    "mern-app/Docker-Notes/for Docker compose.md",
     "mern-app/Docker-Notes/detailed docs.md",
     "mern-app/client/dist/assets/index-W4ecPrYP.js",
     "mern-app/client/dist/index.html",

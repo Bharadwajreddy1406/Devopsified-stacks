@@ -147,4 +147,4 @@ Response goes back through proxy → browser
 
 ---
 
-for more, read 
+for more, read [[detailed docs]]

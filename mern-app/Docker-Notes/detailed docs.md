@@ -89,7 +89,7 @@ So, `fetch(API_URL)` hits the backend on the same host machine.
 ```mermaid
 flowchart TD
     A["Browser"] --> B["Frontend (localhost)"]
-    B --> C["Fetch: 'http://localhost:5000/api/tasks'"]
+    B --> C["Fetch: localhost:5000/api/tasks"]
     C --> D["Backend (localhost)"]
 
 ```
