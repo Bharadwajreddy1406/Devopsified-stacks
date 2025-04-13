@@ -8,7 +8,7 @@ const handleResponse = async (response: Response) => {
   if (!response.ok) {
     const errorData = await response.json().catch(() => ({}));
     const errorMessage = errorData.message || response.statusText;
-    throw new Error(`API Error: ${errorMessage}`);
+  throw new Error(`API Error: ${errorMessage}`);
   }
   return response.json();
 };
