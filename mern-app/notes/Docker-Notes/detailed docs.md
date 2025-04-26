@@ -90,7 +90,7 @@ So, `fetch(API_URL)` hits the backend on the same host machine.
 flowchart TD
     A["Browser"] --> B["Frontend (localhost)"]
     B --> C["Fetch: localhost:5000/api/tasks"]
-    C --> D["Backend (localhost)"]
+    C --> D["Backend port-forwarding container(localhost)"]
 
 ```
 
@@ -134,9 +134,6 @@ flowchart TD
 > 🔥 **Best Practice:**  
 > Keep `VITE_API_URL` blank or set to a relative path (`/api/tasks`) for production. Use NGINX to route correctly inside the Docker network.
 
----
-
-Let me know if you want a small table comparing both or if you'd like to convert this into a `README.md` for your GitHub repo!
 ---
 
 ### Step 2: Fixing NGINX Routing

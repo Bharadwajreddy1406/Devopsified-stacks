@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5b49eb5ec4ca06a2",
+        "id": "7f7ceea248d0596a",
         "type": "tabs",
         "children": [
           {
-            "id": "77c0f281b78e3a23",
+            "id": "fc680e6540f0e84c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "mern-app/Docker-Notes/detailed docs.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "detailed docs"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "mern-app/Docker-Notes/detailed docs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for detailed docs"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "mern-app/Docker-Notes/detailed docs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from detailed docs"
+              "title": "Outgoing links"
             }
           },
           {
@@ -142,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "mern-app/Docker-Notes/detailed docs.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of detailed docs"
+              "title": "Outline"
             }
           }
         ]
@@ -168,18 +161,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "77c0f281b78e3a23",
+  "active": "b87a5fc0c585dea4",
   "lastOpenFiles": [
+    "mern-app/k8s/secrets.yaml",
+    "mern-app/notes/kubernetesNotes/Deployments.md",
+    "mern-app/notes/kubernetesNotes",
+    "mern-app/notes/Docker-Notes/Issues that i got when i'm cookin this.md",
+    "mern-app/notes/Docker-Notes/for Docker compose.md",
+    "mern-app/notes/Docker-Notes/Docker_volumes.md",
+    "mern-app/notes/Docker-Notes/Docker takeaways.md",
+    "mern-app/notes/Docker-Notes/detailed docs.md",
+    "mern-app/notes/Docker-Notes",
+    "mern-app/notes",
+    "mern-app/note",
+    "mern-app/k8s/server-service.yaml",
+    "mern-app/k8s/server-deployment.yml",
+    "mern-app/k8s/ingress.yml",
+    "mern-app/k8s",
+    "mern-app/kubernetes/ingress.yml",
+    "mern-app/kubernetes/ingress.tml",
+    "mern-app/Docker-Notes/detailed docs.md",
     "mern-app/client/node_modules/is-number/README.md",
     "mern-app/Docker-Notes/Issues that i got when i'm cookin this.md",
     "mern-app/Docker-Notes/for Docker compose.md",
-    "mern-app/Docker-Notes/detailed docs.md",
-    "mern-app/client/dist/assets/index-W4ecPrYP.js",
-    "mern-app/client/dist/index.html",
-    "mern-app/client/dist/assets/index-KMgY6NKU.js",
-    "mern-app/client/dist/assets/index-CPYLiXHa.css",
-    "mern-app/client/dist/assets",
-    "mern-app/client/dist/vite.svg",
-    "mern-app/client/dist"
+    "mern-app/client/dist/vite.svg"
   ]
 }
