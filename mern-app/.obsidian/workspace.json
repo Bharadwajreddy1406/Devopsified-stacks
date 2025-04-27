@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5ea216dd7f6aef86",
+        "id": "8500e16e221928b3",
         "type": "tabs",
         "children": [
           {
-            "id": "5db9752e5ce42637",
+            "id": "41670dc37c92188d",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -164,16 +164,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5db9752e5ce42637",
+  "active": "41670dc37c92188d",
   "lastOpenFiles": [
-    "notes/kubernetesNotes/START HERE.md",
+    "server/node_modules/es-errors/README.md",
     "notes/kubernetesNotes/Errors.md",
-    "notes/kubernetesNotes/hostsfile.png",
-    "notes/kubernetesNotes/Deployments.md",
-    "notes/kubernetesNotes/Commands.md",
-    "notes/kubernetesNotes/ingress.md",
-    "notes/kubernetesNotes/Secrets.md",
+    "notes/kubernetesNotes/START HERE.md",
     "notes/kubernetesNotes/Services.md",
+    "notes/kubernetesNotes/ingress.md",
+    "notes/kubernetesNotes/ingress.png",
+    "notes/kubernetesNotes/Deployments.md",
+    "notes/kubernetesNotes/Secrets.md",
+    "notes/kubernetesNotes/hostsfile.png",
+    "notes/kubernetesNotes/Commands.md",
     "notes/kubernetesNotes/browser.png",
     "notes/kubernetesNotes/logs.md",
     "taskmanager-chart/templates/tests/test-connection.yaml",
