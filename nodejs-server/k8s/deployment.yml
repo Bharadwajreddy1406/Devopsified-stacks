@@ -22,13 +22,14 @@ spec:
           env:
             - name: PORT
               valueFrom:
-                configMapRef:
+                configMapKeyRef:
                   name: port-config  # Name of your ConfigMap
-                  key: port-number  # Key inside the ConfigMap
+                  key: port-number   # Key in the ConfigMap
           resources:
-            limits:
+            requests:
               cpu: "100m"
               memory: "128Mi"
-            requests:
-              cpu: "50m"
-              memory: "64Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+
