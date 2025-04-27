@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8500e16e221928b3",
+        "id": "d877885eefa55c0a",
         "type": "tabs",
         "children": [
           {
-            "id": "41670dc37c92188d",
+            "id": "9e50e908a9cada59",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -164,15 +164,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "41670dc37c92188d",
+  "active": "9e50e908a9cada59",
   "lastOpenFiles": [
+    "notes/kubernetesNotes/ingress.md",
+    "notes/kubernetesNotes/Deployments.md",
+    "notes/kubernetesNotes/START HERE.md",
     "server/node_modules/es-errors/README.md",
     "notes/kubernetesNotes/Errors.md",
-    "notes/kubernetesNotes/START HERE.md",
     "notes/kubernetesNotes/Services.md",
-    "notes/kubernetesNotes/ingress.md",
     "notes/kubernetesNotes/ingress.png",
-    "notes/kubernetesNotes/Deployments.md",
     "notes/kubernetesNotes/Secrets.md",
     "notes/kubernetesNotes/hostsfile.png",
     "notes/kubernetesNotes/Commands.md",
