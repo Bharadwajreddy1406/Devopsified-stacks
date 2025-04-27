@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: port-config
+data:
+  # Plain-text port number (no need to base64 encode)
+  # because this is a configmap, not a secret
+  # and it will be used in the deployment as an environment variable
+  # or directly in the application
+  # This is the port number that the application will listen on
+  port-number: "5000"
+
+  # You can add additional configurations here
+  # Example for JWT_SECRET (if not sensitive)
+  # jwt-secret: "someSecretValue"
