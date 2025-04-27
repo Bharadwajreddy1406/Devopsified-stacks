@@ -2,6 +2,12 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 
+const client = require('prom-client');
+const register = new client.Registry();
+client.collectDefaultMetrics({ register });
+
+// see at line 93
+
 const app = express();
 const port = 5000;
 
@@ -82,6 +88,15 @@ app.use((err: Error, req: express.Request, res: express.Response, next: express.
     message: "Something went wrong on the server."
   });
 });
+
+
+// Prometheus metrics endpoint
+app.get('/metrics', async (req, res) => {
+  res.set('Content-Type', register.contentType);
+  res.end(await register.metrics());
+});
+
+
 
 // Start the server
 app.listen(port, () => {

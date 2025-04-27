@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment
-  labels:
-    app: server
 spec:
   replicas: 2
   selector:
@@ -13,6 +11,10 @@ spec:
     metadata:
       labels:
         app: server
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics"
+        prometheus.io/port: "5000"
     spec:
       containers:
         - name: server
@@ -23,8 +25,8 @@ spec:
             - name: PORT
               valueFrom:
                 configMapKeyRef:
-                  name: port-config  # Name of your ConfigMap
-                  key: port-number   # Key in the ConfigMap
+                  name: port-config
+                  key: port-number
           resources:
             requests:
               cpu: "100m"
@@ -32,4 +34,3 @@ spec:
             limits:
               cpu: "500m"
               memory: "512Mi"
-
