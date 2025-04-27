@@ -1,0 +1,47 @@
+# Number of replicas
+replicaCount: 1
+
+# Image settings
+image:
+  repository: bharadwajreddy1406/taskmanager-backend  # <-- your DockerHub image
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# Service settings
+service:
+  type: ClusterIP
+  port: 5000  # <-- your backend listens on 5000
+
+# Ingress settings
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: api.taskmanager
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []  # (We'll leave TLS empty for now)
+
+# Environment variables (like your MongoDB URI)
+env:
+  - name: MONGO_URI
+    value: "your-mongodb-connection-url-here"   # <-- Replace this with your real MongoDB Atlas URL
+
+# Resources (optional)
+resources: 
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+
+# Autoscaling (disabled for now)
+autoscaling:
+  enabled: false
+
+# NodeSelector, Affinity, Tolerations (disabled for now)
+nodeSelector: {}
+tolerations: []
+affinity: {}

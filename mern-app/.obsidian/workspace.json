@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1e5d92fc9f77d4bb",
+        "id": "5ea216dd7f6aef86",
         "type": "tabs",
         "children": [
           {
-            "id": "410d11720a504d46",
+            "id": "5db9752e5ce42637",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/kubernetesNotes/Deployments.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Deployments"
+              "title": "New tab"
             }
           }
         ]
@@ -168,32 +164,37 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "410d11720a504d46",
+  "active": "5db9752e5ce42637",
   "lastOpenFiles": [
-    "notes/kubernetesNotes/Commands.md",
+    "notes/kubernetesNotes/START HERE.md",
     "notes/kubernetesNotes/Errors.md",
-    "hostsfile.png",
-    "Pasted image 20250426222245.png",
-    "browser.png",
+    "notes/kubernetesNotes/hostsfile.png",
     "notes/kubernetesNotes/Deployments.md",
-    "k8s/secrets.yaml",
-    "notes/kubernetesNotes",
+    "notes/kubernetesNotes/Commands.md",
+    "notes/kubernetesNotes/ingress.md",
+    "notes/kubernetesNotes/Secrets.md",
+    "notes/kubernetesNotes/Services.md",
+    "notes/kubernetesNotes/browser.png",
+    "notes/kubernetesNotes/logs.md",
+    "taskmanager-chart/templates/tests/test-connection.yaml",
+    "taskmanager-chart/templates/service.yaml",
+    "taskmanager-chart/templates/tests",
+    "taskmanager-chart/templates/_helpers.tpl",
+    "taskmanager-chart/templates/serviceaccount.yaml",
+    "taskmanager-chart/templates/ingress.yaml",
+    "taskmanager-chart/templates/NOTES.txt",
+    "taskmanager-chart/templates/deployment.yaml",
+    "taskmanager-chart/templates/hpa.yaml",
+    "taskmanager-chart/values.yaml",
+    "README.md",
+    "Pasted image 20250426222245.png",
     "notes/Docker-Notes/for Docker compose.md",
     "notes/Docker-Notes/Docker_volumes.md",
     "notes/Docker-Notes/Issues that i got when i'm cookin this.md",
     "notes/Docker-Notes/Docker takeaways.md",
     "notes/Docker-Notes/detailed docs.md",
-    "notes/Docker-Notes",
-    "notes",
-    "note",
-    "k8s/server-deployment.yml",
-    "k8s/server-service.yaml",
-    "k8s/ingress.yml",
-    "k8s",
     "Docker-Notes/for Docker compose.md",
     "Docker-Notes/Issues.md",
-    "client/nginx.conf",
-    "README.md",
     "kubernetes/kubernetesNotes/Deployments.md",
     "kubernetesNotes/Deployments.md",
     "Docker-Notes/Docker_volumes.md",

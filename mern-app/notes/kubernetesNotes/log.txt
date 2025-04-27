@@ -1,0 +1,99 @@
+﻿
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>powershell Start-Transcript -Path "C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s\log.txt"
+Transcript started, output file is C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s\log.txt
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl get all
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   4m57s
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>ls
+client-deployment.yaml  client-service.yaml  ingress.yml  log.txt  secrets.yaml  server-deployment.yml  server-service.yaml
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl apply -f secrets.yaml
+secret/mongodb-secret unchanged
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl apply -f server-deployment.yml
+deployment.apps/server-deployment created
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl apply -f server-service.yaml
+service/server-service created
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl apply -f client-deployment.yaml
+deployment.apps/client-deployment created
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl apply -f client-service.yaml
+service/client-service created
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl get pods
+NAME                                 READY   STATUS    RESTARTS   AGE
+client-deployment-69d7884867-mljfv   1/1     Running   0          18s
+client-deployment-69d7884867-pqmbt   1/1     Running   0          18s
+server-deployment-6b7469ddf8-bsdl6   1/1     Running   0          27s
+server-deployment-6b7469ddf8-zl488   1/1     Running   0          27s
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>minikube addons enable ingress
+💡  ingress is an addon maintained by Kubernetes. For any concerns contact minikube on GitHub.
+You can view the list of minikube maintainers at: https://github.com/kubernetes/minikube/blob/master/OWNERS
+💡  After the addon is enabled, please run "minikube tunnel" and your ingress resources would be available at "127.0.0.1"
+    ▪ Using image registry.k8s.io/ingress-nginx/controller:v1.11.2
+    ▪ Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.3
+    ▪ Using image registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.3
+🔎  Verifying ingress addon...
+🌟  The 'ingress' addon is enabled
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl get ns
+NAME              STATUS   AGE
+default           Active   35d
+ingress-nginx     Active   10s
+kube-node-lease   Active   35d
+kube-public       Active   35d
+kube-system       Active   35d
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl apply -f ingress.yml
+ingress.networking.k8s.io/app-ingress unchanged
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl get ingress
+NAME          CLASS   HOSTS                         ADDRESS   PORTS   AGE
+app-ingress   nginx   api.taskmanager,taskmanager             80      15h
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl describe ingress
+Name:             app-ingress
+Labels:           <none>
+Namespace:        default
+Address:
+Ingress Class:    nginx
+Default backend:  <default>
+Rules:
+  Host             Path  Backends
+  ----             ----  --------
+  api.taskmanager
+                   /   server-service:5000 (10.244.0.38:5000,10.244.0.39:5000)
+  taskmanager
+                   /   client-service:80 (10.244.0.40:80,10.244.0.41:80)
+Annotations:       nginx.ingress.kubernetes.io/rewrite-target: /
+Events:
+  Type    Reason  Age                From                      Message
+  ----    ------  ----               ----                      -------
+  Normal  Sync    44m (x4 over 45m)  nginx-ingress-controller  Scheduled for sync
+  Normal  Sync    33s (x2 over 33s)  nginx-ingress-controller  Scheduled for sync
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl get ingress
+NAME          CLASS   HOSTS                         ADDRESS   PORTS   AGE
+app-ingress   nginx   api.taskmanager,taskmanager             80      15h
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>kubectl get ingress
+NAME          CLASS   HOSTS                         ADDRESS        PORTS   AGE
+app-ingress   nginx   api.taskmanager,taskmanager   192.168.49.2   80      15h
+
+C:\Users\reddy\OneDrive\Desktop\devops\mern-app\k8s>minikube tunnel
+✅  Tunnel successfully started
+
+📌  NOTE: Please do not close this terminal as this process must stay alive for the tunnel to be accessible ...
+
+❗  Access to ports below 1024 may fail on Windows with OpenSSH clients older than v8.1. For more information, see: https://minikube.sigs.k8s.io/docs/handbook/accessing/#access-to-ports-1024-on-windows-requires-root-permission
+🏃  Starting tunnel for service app-ingress.
+✋  Stopped tunnel for service app-ingress.
+
+
+checkout the application on http://taskmanager
