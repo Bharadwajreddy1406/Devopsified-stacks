@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Build stage
-FROM node:20.17.0-slim as build
+FROM node:20.17.0-slim as builder
 
 # Set working directory
 WORKDIR /app
@@ -19,8 +19,8 @@ RUN npm run build
 # Production stage with Nginx
 FROM nginx:1.25-alpine
 
-# Copy built files from build stage to nginx html directory
-COPY --from=build /app/dist /usr/share/nginx/html
+# Copy built files from builder stage to nginx html directory
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/nginx.conf
 

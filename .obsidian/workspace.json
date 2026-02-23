@@ -4,20 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "7f7ceea248d0596a",
+        "id": "af575dd3827b0966",
         "type": "tabs",
         "children": [
           {
-            "id": "fc680e6540f0e84c",
+            "id": "25ef4455fa3d6d99",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "mern-app/notes/Docker-Notes/for Docker compose.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "for Docker compose"
+            }
+          },
+          {
+            "id": "b2db8a16143531ea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "mern-app/notes/Frontend Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Frontend Notes"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -153,6 +172,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -161,29 +181,46 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b87a5fc0c585dea4",
+  "active": "b2db8a16143531ea",
   "lastOpenFiles": [
-    "mern-app/k8s/secrets.yaml",
-    "mern-app/notes/kubernetesNotes/Deployments.md",
-    "mern-app/notes/kubernetesNotes",
-    "mern-app/notes/Docker-Notes/Issues that i got when i'm cookin this.md",
+    "mern-app/client/node_modules/vite/misc/true.js",
+    "mern-app/client/node_modules/vite/misc/false.js",
+    "mern-app/client/node_modules/vite/misc",
+    "mern-app/client/node_modules/tailwind-merge/src/lib/parse-class-name.ts",
+    "mern-app/client/node_modules/tailwind-merge/src/lib/validators.ts",
+    "mern-app/client/node_modules/tailwind-merge/src/lib/merge-classlist.ts",
+    "mern-app/client/node_modules/tailwind-merge/src/lib/utils.ts",
+    "mern-app/client/node_modules/tailwind-merge/src/lib/types.ts",
+    "mern-app/client/node_modules/tailwind-merge/src/lib/tw-merge.ts",
+    "mern-app/client/node_modules/tailwind-merge/src/lib/tw-join.ts",
+    "mern-app/client/node_modules/tailwind-merge/src/lib/sort-modifiers.ts",
     "mern-app/notes/Docker-Notes/for Docker compose.md",
+    "mern-app/notes/Frontend Notes.md",
     "mern-app/notes/Docker-Notes/Docker_volumes.md",
     "mern-app/notes/Docker-Notes/Docker takeaways.md",
     "mern-app/notes/Docker-Notes/detailed docs.md",
-    "mern-app/notes/Docker-Notes",
-    "mern-app/notes",
-    "mern-app/note",
-    "mern-app/k8s/server-service.yaml",
-    "mern-app/k8s/server-deployment.yml",
-    "mern-app/k8s/ingress.yml",
-    "mern-app/k8s",
-    "mern-app/kubernetes/ingress.yml",
-    "mern-app/kubernetes/ingress.tml",
-    "mern-app/Docker-Notes/detailed docs.md",
-    "mern-app/client/node_modules/is-number/README.md",
-    "mern-app/Docker-Notes/Issues that i got when i'm cookin this.md",
-    "mern-app/Docker-Notes/for Docker compose.md",
+    "mern-app/client/README.Docker.md",
+    "mern-app/client/node_modules/eslint/README.md",
+    "mern-app/client/node_modules/ajv/README.md",
+    "mern-app/client/node_modules/rollup/README.md",
+    "mern-app/client/node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion/README.md",
+    "mern-app/client/node_modules/vite/LICENSE.md",
+    "mern-app/client/node_modules/@vitejs/plugin-react/README.md",
+    "mern-app/client/node_modules/@tailwindcss/vite/README.md",
+    "mern-app/client/node_modules/ajv/lib/dotjs/README.md",
+    "mern-app/client/node_modules/react-router/CHANGELOG.md",
+    "mern-app/client/node_modules/@jridgewell/trace-mapping/README.md",
+    "mern-app/client/node_modules/acorn/README.md",
+    "mern-app/client/node_modules/@humanwhocodes/module-importer/README.md",
+    "mern-app/client/node_modules/browserslist/README.md",
+    "mern-app/client/node_modules/react-refresh/README.md",
+    "mern-app/client/node_modules/tinyglobby/README.md",
+    "mern-app/client/node_modules/escalade/readme.md",
+    "mern-app/client/node_modules/lru-cache/README.md",
+    "mern-app/client/node_modules/@rollup/rollup-win32-x64-gnu/README.md",
+    "mern-app/client/node_modules/@rollup/rollup-win32-x64-msvc/README.md",
+    "mern-app/client/public/vite.svg",
+    "Kubernetes/Kubernetes_periodic_table.jpeg",
     "mern-app/client/dist/vite.svg"
   ]
 }

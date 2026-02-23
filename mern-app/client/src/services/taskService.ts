@@ -1,9 +1,7 @@
 import { Task, TaskFormData } from '../types/Task';
 
 // Use relative URL or environment variable for API URL
-const API_URL = process.env.NODE_ENV === 'production' 
-  ? '/api/tasks'  // In production, use relative path that can be handled by proxy
-  : 'http://localhost:5000/api/tasks'; // In development, use full URL
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/tasks';
 
 // Fetch all tasks with optional status filter
 export const fetchTasks = async (status?: string): Promise<Task[]> => {

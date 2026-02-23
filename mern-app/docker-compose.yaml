@@ -8,7 +8,7 @@ services:
       - server
     restart: unless-stopped
     environment:
-      - API_URL=http://server:5000
+      - API_URL=http://localhost:5000/api/tasks
 
   server:
     build:

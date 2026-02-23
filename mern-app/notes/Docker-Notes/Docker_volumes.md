@@ -75,5 +75,3 @@ creates a binding between a Docker-managed named volume (`mongo-data`) and a dir
 - **Persistence & Data Management:**  
     This setup ensures that MongoDB’s data persists across container restarts and removals, as it is managed independently by Docker.
     
-
-This detailed explanation should give you a clear understanding of how the volume mapping works and why it is used to ensure data persistence in your MongoDB service.

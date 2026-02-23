@@ -1,8 +1,8 @@
 import { Task, TaskFormData } from '../types/Task';
 
 // Use environment variable or default to localhost in development
-// const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/tasks';
-const API_URL = 'http://api.taskmanager/api/tasks';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/tasks';
+// const API_URL = 'http://api.taskmanager/api/tasks';
 
 // Function to handle common fetch errors
 const handleResponse = async (response: Response) => {
