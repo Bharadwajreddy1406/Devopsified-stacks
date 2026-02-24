@@ -1,14 +1,22 @@
+version: "3.9"
+
 services:
+
   client:
     build:
       context: ./client
     ports:
-      - 80:80
+      - "80:80"
     depends_on:
-      - server
+      server:
+        condition: service_healthy
     restart: unless-stopped
-    environment:
-      - API_URL=http://localhost:5000/api/tasks
+    networks:
+      - app-net
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      retries: 3
 
   server:
     build:
@@ -17,20 +25,35 @@ services:
       NODE_ENV: production
       MONGODB_URI: mongodb://mongo:27017/taskmanager
     ports:
-      - 5000:5000
+      - "5000:5000"
     depends_on:
-      - mongo
+      mongo:
+        condition: service_healthy
     restart: unless-stopped
+    networks:
+      - app-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 20s
+      retries: 5
 
   mongo:
     image: mongo:6
     volumes:
       - mongo-data:/data/db
     restart: unless-stopped
-    # For development purposes only. In production, remove port mapping
-    # and rely on container networking
-    ports:
-      - 27017:27017
+    expose:
+      - "27017"
+    networks:
+      - app-net
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 20s
+      retries: 5
 
 volumes:
   mongo-data:
+
+networks:
+  app-net:
+    driver: bridge
