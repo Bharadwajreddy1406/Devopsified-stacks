@@ -5,30 +5,73 @@ metadata:
   labels:
     app: server
 spec:
-  replicas: 2
+  replicas: 3
+
+  revisionHistoryLimit: 5
+  progressDeadlineSeconds: 600
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+
   selector:
     matchLabels:
       app: server
+
   template:
     metadata:
       labels:
         app: server
     spec:
+      terminationGracePeriodSeconds: 30
+
       containers:
         - name: mern-server
           image: bharadwajreddy1406/mern-server:latest
+          imagePullPolicy: IfNotPresent
+
           ports:
             - containerPort: 5000
+              name: http
+
           env:
             - name: MONGODB_URI
               valueFrom:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongodb-uri
+
           resources:
-            limits:
+            requests:
               cpu: "100m"
               memory: "128Mi"
-            requests:
-              cpu: "50m"
-              memory: "64Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            failureThreshold: 30
+            periodSeconds: 5
