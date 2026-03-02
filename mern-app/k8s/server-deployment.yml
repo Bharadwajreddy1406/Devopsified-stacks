@@ -39,9 +39,9 @@ spec:
           env:
             - name: MONGODB_URI
               valueFrom:
-                secretKeyRef:
-                  name: mongodb-secret
-                  key: mongodb-uri
+                configMapKeyRef:
+                  name: app-config
+                  key: MONGODB_URI
 
           resources:
             requests:
@@ -51,27 +51,28 @@ spec:
               cpu: "300m"
               memory: "256Mi"
 
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 5000
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            timeoutSeconds: 2
-            failureThreshold: 3
+          # Temporarily disabled until Docker image is rebuilt with /health endpoint
+          # readinessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 5000
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 5
+          #   timeoutSeconds: 2
+          #   failureThreshold: 3
 
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 5000
-            initialDelaySeconds: 15
-            periodSeconds: 10
-            timeoutSeconds: 2
-            failureThreshold: 3
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 5000
+          #   initialDelaySeconds: 15
+          #   periodSeconds: 10
+          #   timeoutSeconds: 2
+          #   failureThreshold: 3
 
-          startupProbe:
-            httpGet:
-              path: /health
-              port: 5000
-            failureThreshold: 30
-            periodSeconds: 5
+          # startupProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 5000
+          #   failureThreshold: 30
+          #   periodSeconds: 5

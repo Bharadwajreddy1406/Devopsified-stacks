@@ -7,18 +7,18 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: api.taskmanager
+    - host: localhost
       http:
         paths:
-          - path: /
+          - path: /api
             pathType: Prefix
             backend:
               service:
                 name: server-service
                 port:
-                  number: 5000
+                  number: 80
 
-    - host: taskmanager
+    - host: localhost
       http:
         paths:
           - path: /
