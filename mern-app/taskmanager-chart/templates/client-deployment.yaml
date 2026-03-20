@@ -3,26 +3,22 @@ kind: Deployment
 metadata:
   name: {{ .Values.clientDeploymentName }}
   labels:
-    app: client
+    {{- toYaml .Values.client.labels | nindent 4 }}
 spec:
-  replicas: 2
+  replicas: {{ .Values.clientSpec.replicas }}
   selector:
     matchLabels:
-      app: client
+      {{- toYaml .Values.client.labels | nindent 6 }}
   template:
     metadata:
       labels:
-        app: client
+        {{- toYaml .Values.client.labels | nindent 8 }}
     spec:
       containers:
-        - name: mern-client
-          image: bharadwajreddy1406/mern-client:latest
+        - name: {{ .Values.clientImage.containerName }}
+          image: {{ .Values.clientImage.repository }}:{{ .Values.clientImage.tag }}
           ports:
-            - containerPort: 80
+            - containerPort: {{ (index .Values.clientSpec.ports 0).containerPort }}
           resources:
-            limits:
-              cpu: "100m"
-              memory: "128Mi"
-            requests:
-              cpu: "50m"
-              memory: "64Mi"
+            {{- toYaml .Values.clientSpec.resources | nindent 12 }}
+          imagePullPolicy: {{ .Values.clientImage.pullPolicy }}

@@ -4,20 +4,32 @@ metadata:
   description: A Helm chart for deploying a MERN stack application
   appVersion: "1.0.0"
 
-
+protocol: TCP
+internalTrafficPolicy: Cluster
 
 clientDeploymentName: client-deployment
 serverDeploymentName: server-deployment
 
 clientReplicaCount: 1
 clientImage:
+  containerName: mern-client
   repository: bharadwajreddy1406/mern-client
   tag: latest
   pullPolicy: IfNotPresent
 
+client:
+  labels:
+    app: client
+  service_name: client-service
+
+
 clientSpec:
+  replicas: 1
   ports:
     - containerPort: 80
+    - targetPort: 80
+  service_type: ClusterIP
+
   resources:
     limits:
       cpu: "100m"
@@ -33,9 +45,16 @@ serverImage:
   tag: latest
   pullPolicy: IfNotPresent
 
+server:
+  labels:
+    app: server
+  service_name: server-service
+
 serverSpec:
   ports:
-    - containerPort: 5000
+    - containerPort: 80
+    - targetPort: 5000
+  service_type: ClusterIP
   resources:
     requests:
       cpu: "100m"

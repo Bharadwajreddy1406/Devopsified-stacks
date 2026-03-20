@@ -1,12 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: client-service
+  name: {{ .Values.client.service_name }}
+  labels:
+    {{ toYaml .Values.client.labels | indent 4 }}
 spec:
   selector:
-    app: client
+    {{ toYaml .Values.client.labels | indent 4 }}
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP
+    - protocol: {{ .Values.protocol }}
+      port: {{ (index .Values.clientSpec.ports 0).containerPort }}
+      targetPort: {{ (index .Values.clientSpec.ports 0).targetPort }}
+  type: {{ .Values.clientSpec.service_type }}

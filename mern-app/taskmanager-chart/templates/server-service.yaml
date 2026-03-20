@@ -1,21 +1,21 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: server-service
+  name: {{ .Values.server.service_name}}
   labels:
-    app: server
+    {{ toYaml .Values.server.labels | indent 4 }}
 spec:
-  type: ClusterIP
+  type: {{ .Values.serverSpec.service_type }}
 
   selector:
-    app: server
+    {{ toYaml .Values.server.labels | indent 4 }}
 
   ports:
     - name: http
-      protocol: TCP
-      port: 80
-      targetPort: 5000
+      protocol: {{.Values.protocol }}
+      port: {{ (index .Values.serverSpec.ports 0).containerPort }}
+      targetPort: {{ (index .Values.serverSpec.ports 0).targetPort }}
 
   sessionAffinity: None
 
-  internalTrafficPolicy: Cluster
+  internalTrafficPolicy: {{ .Values.internalTrafficPolicy }}
